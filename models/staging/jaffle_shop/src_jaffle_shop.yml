@@ -7,3 +7,8 @@ sources:
     tables:
       - name: customers
       - name: orders
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 1, period: hour}
+  
+
