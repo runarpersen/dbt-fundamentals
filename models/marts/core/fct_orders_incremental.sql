@@ -1,7 +1,10 @@
+{{ dbt_utils.surrogate_key('order_id', 'customer_id') }} as new_key
+
 {{
     config(
         materialized='incremental',
-        unique_key="order_id||'-'||customer_id"
+        unique_key= 'new_key'
+        
     )
 }}
 with a as(
