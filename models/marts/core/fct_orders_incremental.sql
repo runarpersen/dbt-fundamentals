@@ -1,7 +1,7 @@
 {{
     config(
         materialized='incremental',
-        unique_key='order_id, customer_id'
+        unique_key="order_id||'-'||customer_id"
     )
 }}
 with a as(
