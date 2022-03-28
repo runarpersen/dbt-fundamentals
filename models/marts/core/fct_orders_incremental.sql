@@ -1,14 +1,13 @@
-{{ dbt_utils.surrogate_key('order_id', 'customer_id') }} as new_key
-
 {{
     config(
         materialized='incremental',
-        unique_key= 'new_key'
+        unique_key= 'composite_key'
         
     )
 }}
 with a as(
-    select * from {{ ref('fct_orders') }}
+    select *, md5 ( concat ( coalesce(to_char(order_id), ''), coalesce(to_char(customer_id), '') ) ) as composite_key,
+    from {{ ref('fct_orders') }}
 ),
 final as(
     select * from a
