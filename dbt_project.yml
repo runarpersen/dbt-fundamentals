@@ -36,10 +36,10 @@ models:
     # Applies to all files under models/staging/
     staging:
       +materialized: view
-      +database: raw
+      +database: raw_runar
       +schema: jaffle_shop
     # Applies to all files under models/marts/
     marts:
       +materialized: table
-      +database: analytics
+      +database: analytics_runar
       +schema: analyze
