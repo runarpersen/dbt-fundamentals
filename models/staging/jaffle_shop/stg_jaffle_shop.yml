@@ -9,6 +9,10 @@ models:
         tests:
           - unique
           - not_null
+      - name: first_name
+        description: Person first name
+      - name: last_name
+        description: Person last name
 
   - name: stg_orders
     description: Staged order data from our jaffle shop app.

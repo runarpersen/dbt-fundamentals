@@ -1,3 +1,44 @@
 {
-    "dbt.queryLimit": 500
+    "dbt.queryLimit": 500,
+    "sqltools.connections": [
+        {
+            "account": "eu77090.eu-west-1",
+            "authenticator": "SNOWFLAKE",
+            "database": "DEV_RUNAR_PERSEN",
+            "driver": "Snowflake",
+            "name": "snowflake_conn",
+            "ocspOptions": {
+                "ocspFailOpen": true
+            },
+            "password": "Snowflake2021",
+            "previewLimit": 50,
+            "snowflakeOptions": {
+                "clientSessionKeepAlive": true,
+                "clientSessionKeepAliveHeartbeatFrequency": 3600,
+                "role": "SYSADMIN"
+            },
+            "username": "AD05484",
+            "warehouse": "COMPUTE_WH"
+        },
+        {
+            "authenticator": "SNOWFLAKE_JWT",
+            "ocspOptions": {
+                "ocspFailOpen": true
+            },
+            "snowflakeOptions": {
+                "clientSessionKeepAlive": true,
+                "clientSessionKeepAliveHeartbeatFrequency": 3600,
+                "schema": "jaffle_shop",
+                "role": "sysadmin"
+            },
+            "previewLimit": 50,
+            "driver": "Snowflake",
+            "name": "DNB Sandbox",
+            "account": "eu77090.eu-west-1",
+            "username": "runar.persen@dnb.no",
+            "privateKeyPath": "C:\\GitRepo\\rsa_key.p8",
+            "database": "raw_runar",
+            "warehouse": "compute_wh"
+        }
+    ]
 }
